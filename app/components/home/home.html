@@ -1,0 +1,38 @@
+
+<div class="container">
+	<h1>Tasks List</h1>
+    <div class="row">
+		<div class="col-xs-4">
+			<input type="search" class="form-control" ng-model="taskSearch" placeholder="Find Task" />
+		</div>
+		<div class="col-xs-6">
+			<div class="btn-group">
+				<button 
+					ng-repeat="button in $ctrl.activeButtons"
+					ng-click="$ctrl.showActive = button"
+					class="btn"
+					ng-class="{'btn-danger': $ctrl.showActive == button, 'btn-default': $ctrl.showActive == button}"
+				>{{button | uppercase }}</button>
+			</div>
+		</div>		
+		<div class="col-xs-1">
+			<a href="#/create" class="btn btn-primary" >Add Task</a>
+		</div>
+	</div>
+</div>	
+<hr>
+<div class="container">
+    <div class="row">
+		<table class="table table-striped">
+			<tr ng-repeat="task in $ctrl.tasks | filter:taskSearch | filter:$ctrl.activeFilter track by $index ">
+			<!--<tr ng-repeat="task in $ctrl.tasks | findTask | filter:activeFilter ">-->
+				<td><input type="checkbox" ng-click="$ctrl.toggleActive($index, task)" ng-checked="task.active" /></td>
+				<td>{{ task.name }}</td>
+				<td>{{ task.description }}</td>
+				<td><a ng-href="#/update/{{ $index }}" class="btn btn-xs btn-default">edit</a></td>
+				<td><a href="" ng-click="$ctrl.remove($index)" class="btn btn-xs btn-default">remove</a></td>
+			</tr>
+		</table>		
+	</div>
+</div>	
+
