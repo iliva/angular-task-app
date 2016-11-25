@@ -17,7 +17,7 @@
     "angular-mocks": "1.5.8",
     "body-parser": "^1.15.2",
     "express": "^4.14.0",
-    "gulp": "^3.9.1",
+    "gulp": "^3.9.1", 
     "gulp-concat": "^2.6.0",
     "gulp-load-plugins": "^1.2.0",
     "gulp-sourcemaps": "^1.6.0",
