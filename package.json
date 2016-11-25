@@ -1,14 +1,12 @@
 {
-  "name": "angular-workshop",
+  "name": "angular-tasks-app",
   "version": "1.0.0",
-  "description": "Angular Workshop",
   "main": "index.js",
   "scripts": {
     "test": "karma start --single-run",
     "tdd": "karma start --no-single-run --auto-watch",
     "start": "gulp & node server/app.js"
   },
-  "author": "Stanislav Demydiuk",
   "license": "MIT",
   "dependencies": {
     "angular": "1.5.8",
