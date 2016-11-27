@@ -27,8 +27,8 @@ angular.module('app').controller('HomeController',
 		function activeFilter(tasks){
 			switch(vm.showActive){
 				case 'all': return tasks; break;
-				case 'active': return tasks.active == 1; break;
-				case 'unactive': return tasks.active == 0; break;
+				case 'active': return tasks.active; break;
+				case 'unactive': return !tasks.active; break;
 			}
 		}
 						
